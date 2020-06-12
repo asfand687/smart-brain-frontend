@@ -2,6 +2,9 @@ import React from 'react';
 import './ImageLinkForm.css';
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
+  const doSearch = (e) => {
+    onInputChange(e.target.value);
+  };
   return (
     <div>
       <p>
@@ -12,9 +15,12 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
           <input
             type='text'
             className='fa3 pa2 center w-70'
-            onChange={onInputChange}
+            onChange={(e) => doSearch(e)}
           />
-          <button className='w-30 grow f4 link ph3 pv2 dib white bg-light-purple' onClick={ onButtonSubmit } >
+          <button
+            className='w-30 grow f4 link ph3 pv2 dib white bg-light-purple'
+            onClick={onButtonSubmit}
+          >
             Detect
           </button>
         </div>
